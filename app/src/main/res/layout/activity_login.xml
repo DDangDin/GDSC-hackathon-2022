@@ -8,7 +8,7 @@
     tools:context=".Login">
 
     <ImageView
-        android:id="@+id/splash_text2"
+        android:id="@+id/end_text"
         android:layout_width="108dp"
         android:layout_height="53dp"
         android:src="@drawable/login_text"
@@ -22,7 +22,7 @@
         android:src="@drawable/login_text2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/splash_text2"/>
+        app:layout_constraintTop_toBottomOf="@id/end_text"/>
 
     <ImageButton
         android:id="@+id/btn_google_login"
