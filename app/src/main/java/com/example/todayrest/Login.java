@@ -31,10 +31,11 @@ public class Login extends AppCompatActivity {
     private ImageButton btn_google_login;
 
     private SignInButton signInButton;
-    private GoogleSignInClient mGoogleSignInClient;
     private String TAG="mainTag";
+    private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private int RC_SIGN_IN=123;
+    static GoogleSignInAccount acct2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +90,7 @@ public class Login extends AppCompatActivity {
             try {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
+                acct2 = account;
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately

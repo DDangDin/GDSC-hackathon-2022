@@ -4,4 +4,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="mypage_time"><u>시간관리</u></string>
+    <string name="mypage_logout"><u>로그아웃</u></string>
 </resources>
