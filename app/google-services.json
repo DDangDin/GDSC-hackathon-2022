@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "836498733280",
+    "project_id": "smhkt-afaf9",
+    "storage_bucket": "smhkt-afaf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836498733280:android:2995b1e65032dc0567f885",
+        "android_client_info": {
+          "package_name": "com.example.todayrest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836498733280-k0hvsqgdmghbj3p6h2npqknlvi7p8t6c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMtx5h_Y8purF6px3vEokDMTYbQox21OI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836498733280-k0hvsqgdmghbj3p6h2npqknlvi7p8t6c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
