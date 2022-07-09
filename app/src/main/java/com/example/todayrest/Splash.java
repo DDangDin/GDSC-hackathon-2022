@@ -37,9 +37,9 @@ public class Splash extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                int status = NetworkManager.getConnectivityStatus(getApplicationContext());
+//                int status = NetworkManager.getConnectivityStatus(getApplicationContext());
                 if(acct != null){
-                    if(acct.getUid() != null && status == NetworkManager.TYPE_WIFI){
+                    if(acct.getUid() != null){
                         startActivity(mainIntent);
                     }
                     else{

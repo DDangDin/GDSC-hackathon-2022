@@ -8,10 +8,19 @@
     tools:context=".Login">
 
     <ImageView
+        android:layout_width="57dp"
+        android:layout_height="70dp"
+        android:src="@drawable/login_logo3"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/end_text"/>
+
+    <ImageView
         android:id="@+id/end_text"
         android:layout_width="108dp"
         android:layout_height="53dp"
-        android:src="@drawable/login_text"
+        android:src="@drawable/login_logo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

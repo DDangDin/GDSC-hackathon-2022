@@ -7,12 +7,21 @@
     android:background="#4DB85C"
     android:id="@+id/splash_screen"
     tools:context=".Splash">
+    
+    <ImageView
+        android:layout_width="57dp"
+        android:layout_height="70dp"
+        android:src="@drawable/splash_logo3"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/splash_logo"/>
 
     <ImageView
         android:id="@+id/splash_logo"
         android:layout_width="108dp"
         android:layout_height="53dp"
-        android:src="@drawable/splash_logo"
+        android:src="@drawable/splash_logo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

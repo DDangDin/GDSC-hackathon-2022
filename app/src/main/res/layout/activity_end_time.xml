@@ -61,7 +61,7 @@
 
 
     <EditText
-        android:id="@+id/start_time_hour"
+        android:id="@+id/end_time_hour"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginStart="26dp"
@@ -80,12 +80,12 @@
         android:textColor="@color/green_1"
         android:textSize="60sp"
         android:layout_marginTop="160dp"
-        app:layout_constraintEnd_toStartOf="@+id/start_time_minute"
-        app:layout_constraintStart_toEndOf="@+id/start_time_hour"
+        app:layout_constraintEnd_toStartOf="@+id/end_time_minute"
+        app:layout_constraintStart_toEndOf="@+id/end_time_hour"
         app:layout_constraintTop_toBottomOf="@+id/end_text" />
 
     <EditText
-        android:id="@+id/start_time_minute"
+        android:id="@+id/end_time_minute"
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_marginStart="70dp"
@@ -94,7 +94,7 @@
         android:textSize="27sp"
         android:textColor="@color/green_1"
         android:textAlignment="center"
-        app:layout_constraintStart_toEndOf="@+id/start_time_hour"
+        app:layout_constraintStart_toEndOf="@+id/end_time_hour"
         app:layout_constraintTop_toBottomOf="@+id/end_text" />
 
 
