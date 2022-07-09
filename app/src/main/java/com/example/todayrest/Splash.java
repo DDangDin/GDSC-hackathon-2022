@@ -34,9 +34,15 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 int status = NetworkManager.getConnectivityStatus(getApplicationContext());
-                if(FirebaseAuth.getInstance().getCurrentUser().getUid() != null && status == NetworkManager.TYPE_WIFI){
-                    startActivity(mainIntent);
-                }else{
+                if(FirebaseAuth.getInstance().getCurrentUser() != null){
+                    if(FirebaseAuth.getInstance().getCurrentUser().getUid() != null && status == NetworkManager.TYPE_WIFI){
+                        startActivity(mainIntent);
+                    }
+                    else{
+                        startActivity(loginIntent);
+                    }
+                }
+                else{
                     startActivity(loginIntent);
                 }
                 finish();

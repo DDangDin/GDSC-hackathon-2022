@@ -41,7 +41,7 @@ public class StartTime extends AppCompatActivity {
         btn_start_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StartTime.this, end_time.class);
+                Intent intent = new Intent(StartTime.this, EndTime.class);
                 startActivity(intent);
             }
         });

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TodayRest">
         <activity
-            android:name=".end_time"
+            android:name=".EndTime"
             android:exported="false" />
         <activity
             android:name=".StartTime"
