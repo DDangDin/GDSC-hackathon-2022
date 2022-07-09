@@ -67,7 +67,7 @@ public class MyPage extends Fragment{
 
         text_nic.setText(Splash.acct.getDisplayName());
         Glide.with(this).load(Splash.acct.getPhotoUrl()).circleCrop().into(login_im);
-        /*Glide.with(this).load(intent.getStringExtra("profileImg")).into(logout_text);
+        /*Glide.with(this).load(Splash.acct.getStringExtra("profileImg")).into(logout_text);
 
         findViewById(R.id.button).setOnClickListener(v -> {
             UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
