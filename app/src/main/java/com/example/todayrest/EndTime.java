@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class end_time extends AppCompatActivity {
+public class EndTime extends AppCompatActivity {
     TextView text_am;
     TextView text_pm;
 
