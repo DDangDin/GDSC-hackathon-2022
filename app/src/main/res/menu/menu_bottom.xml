@@ -8,6 +8,7 @@
         android:enabled="true"
         android:checked="true"
         android:title="cal"
+
         />
     <item
         android:id="@+id/tab2"
