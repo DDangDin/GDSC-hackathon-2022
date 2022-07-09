@@ -15,20 +15,70 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
 
     private long backBtnTime = 0;
+    BottomNavigationView bottomNavigationView;
+    Cal cal;
+    MyPage myPage;
+    Home home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        cal = new Cal();
+        myPage = new MyPage();
+        home=new Home();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_layout,home).commitAllowingStateLoss();
+
+        bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               switch (item.getItemId()){
+                   case R.id.tab1:{
+                       getSupportFragmentManager().beginTransaction()
+                               .replace(R.id.main_layout,cal).commitAllowingStateLoss();
+                       return true;
+                       
+                   }
+                   case R.id.tab2:{
+                       getSupportFragmentManager().beginTransaction()
+                               .replace(R.id.main_layout,home).commitAllowingStateLoss();
+                       return true;
+
+                   }
+                   case R.id.tab3:{
+                       getSupportFragmentManager().beginTransaction()
+                               .replace(R.id.main_layout,myPage).commitAllowingStateLoss();
+                       return true;
+
+                   }
+                   
+                   default:return false;
+               }
+            }
+        });
+
 
 
     }

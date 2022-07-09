@@ -12,21 +12,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TodayRest">
         <activity
+            android:name=".EndTime"
+            android:exported="false" />
+        <activity
+            android:name=".StartTime"
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity
             android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".Splash"
             android:exported="true"
             android:theme="@style/Theme.TodayRestSub">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
