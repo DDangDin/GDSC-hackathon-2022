@@ -20,13 +20,15 @@ public class Home extends Fragment{
     private RecyclerView recyclerView;
     private MainViewAdapter adapter;
     private ArrayList<HomeItemData> list;
-
+    static Fragment homeFragment;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.activity_home, container,false);
         context = container.getContext();
+
+        homeFragment = new Home();
 
         recyclerView = (RecyclerView) viewGroup.findViewById(R.id.recyclerView);
 

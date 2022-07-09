@@ -6,4 +6,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="mypage_time"><u>시간관리</u></string>
     <string name="mypage_logout"><u>로그아웃</u></string>
+    <string name="cancel">취소</string>
+    <string name="ok">확인</string>
 </resources>
