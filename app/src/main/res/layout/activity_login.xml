@@ -11,7 +11,7 @@
         android:id="@+id/splash_text2"
         android:layout_width="108dp"
         android:layout_height="53dp"
-        android:src="@drawable/splash_text2"
+        android:src="@drawable/login_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,7 +19,7 @@
     <ImageView
         android:layout_width="152dp"
         android:layout_height="20dp"
-        android:src="@drawable/splash_text"
+        android:src="@drawable/login_text2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/splash_text2"/>
