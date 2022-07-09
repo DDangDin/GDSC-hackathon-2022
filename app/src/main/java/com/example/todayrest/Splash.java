@@ -11,17 +11,21 @@ import android.view.View;
 import android.view.Window;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Splash extends AppCompatActivity {
     Window window;
 
     ConstraintLayout splash_screen;
 
+    static FirebaseUser acct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        acct = FirebaseAuth.getInstance().getCurrentUser();
 
 //        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
@@ -34,8 +38,8 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 int status = NetworkManager.getConnectivityStatus(getApplicationContext());
-                if(FirebaseAuth.getInstance().getCurrentUser() != null){
-                    if(FirebaseAuth.getInstance().getCurrentUser().getUid() != null && status == NetworkManager.TYPE_WIFI){
+                if(acct != null){
+                    if(acct.getUid() != null && status == NetworkManager.TYPE_WIFI){
                         startActivity(mainIntent);
                     }
                     else{
