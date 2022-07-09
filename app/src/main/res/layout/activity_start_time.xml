@@ -48,8 +48,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp"
-         />
+        android:layout_marginBottom="50dp" />
 
     <TextView
         android:id="@+id/text_Time"
@@ -63,6 +62,42 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_start_next"
         android:layout_marginTop="10dp"/>
 
+    <EditText
+        android:id="@+id/start_time_hour"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="180dp"
+        android:inputType="numberDecimal"
+        android:textSize="27sp"
+        android:textAlignment="center"
+        android:textColor="@color/green_1"
+        app:layout_constraintStart_toEndOf="@+id/text_Am"
+        app:layout_constraintTop_toBottomOf="@+id/end_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textColor="@color/green_1"
+        android:textSize="60sp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toStartOf="@+id/start_time_minute"
+        app:layout_constraintStart_toEndOf="@+id/start_time_hour"
+        app:layout_constraintTop_toBottomOf="@+id/end_text" />
+
+    <EditText
+        android:id="@+id/start_time_minute"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="180dp"
+        android:inputType="numberDecimal"
+        android:textSize="27sp"
+        android:textColor="@color/green_1"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/start_time_hour"
+        app:layout_constraintTop_toBottomOf="@+id/end_text" />
 
 
 
