@@ -23,7 +23,7 @@
 
         app:itemIconTint="@drawable/item_color"
         app:itemTextColor="@drawable/item_color"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
 <!--    <com.google.android.gms.common.SignInButton-->

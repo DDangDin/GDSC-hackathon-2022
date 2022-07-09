@@ -4,7 +4,7 @@
     <item
         android:id="@+id/tab1"
         app:showAsAction="always"
-        android:icon="@drawable/icon_cal"
+        android:icon="@drawable/cal"
         android:enabled="true"
         android:checked="true"
         android:title="cal"
@@ -13,14 +13,14 @@
     <item
         android:id="@+id/tab2"
         app:showAsAction="always"
-        android:icon="@drawable/icon_home"
+        android:icon="@drawable/home"
         android:enabled="true"
         android:title="home"/>
 
     <item
         android:id="@+id/tab3"
         app:showAsAction="always"
-        android:icon="@drawable/icon_mypage"
+        android:icon="@drawable/mypage"
         android:enabled="true"
         android:title="mypage"/>
 
