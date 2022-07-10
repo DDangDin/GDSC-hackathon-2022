@@ -13,6 +13,7 @@
         android:layout_weight="4.5">
 
         <ImageView
+            android:id="@+id/home_logo"
             android:layout_width="58dp"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
@@ -20,6 +21,77 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/home_text"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="0.5"
+            android:text="오늘의 쉼 시간"
+            android:textAlignment="center"
+            android:textColor="#cccccc"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_logo"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/home_text">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총  "
+                android:textColor="#6BCF86"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/home_total_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#6BCF86"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간 "
+                android:textColor="#6BCF86"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/home_total_minute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#6BCF86"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="분"
+                android:textColor="#6BCF86"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:background="#cccccc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout" />
 
         <TextView
             android:layout_width="wrap_content"

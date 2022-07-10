@@ -1,47 +1,30 @@
 package com.example.todayrest;
 
+import static com.example.todayrest.Splash.acct;
+import static com.example.todayrest.Splash.restTime;
+
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.view.MenuItem;
 import android.view.Window;
-import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.room.Room;
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
-
-import java.util.Objects;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,48 +39,57 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase database;
     GoogleSignInAccount acct3;
 
-    static int restTime;
+    private UserDao mUserDao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        acct3 = GoogleSignIn.getLastSignedInAccount(this);
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference(acct3.getId());
-
-        // ex
-        myRef.child("restTime").setValue("6");
 
 
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot i : snapshot.getChildren()){
-                    restTime = Integer.parseInt(i.getValue().toString());
-                    Log.d("dbTest", restTime+"");
+// RoomDB
+
+        UserDatabase database = Room.databaseBuilder(getApplicationContext(), UserDatabase.class, "room_db")
+                .fallbackToDestructiveMigration()   // 스키마(DB) 버전 변경 가능
+                .allowMainThreadQueries()           // Main Thread에 DB에 IO를 가능하게 함
+                .build();
+        mUserDao = database.userDao();              // 인터페이스 객체 할당
+
+        User user = new User();
+
+        List<User> userList = mUserDao.getUserAll();
+        // 조회
+        if(restTime != 0) {
+            for (User i : userList) {
+                if(i!=null){
+                    user.setId(1);
+                    user.setRestTime(restTime);
+                    mUserDao.setUpdateUser(user);
+                }else{
+                    // 삽입
+                    user.setRestTime(restTime);
+                    mUserDao.setInsertUser(user);
                 }
-
             }
+        }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+        // 수정
+//        User user2 = new User();
+//        user2.setId(1);             // 수정 때는 필요
+//        user2.setName("testName_re");
+//        user2.setAge("20");
+//        user2.setPhoneNumber("01000000000");
+//        mUserDao.setUpdateUser(user2);
 
-            }
-
-        });
-
-
-
-
-
-
-
-
-
+        // 삭제
+//        User user3 = new User();
+//        user3.setId(4);
+//        mUserDao.setDeleteUser(user3);
 
 
+        // RoomDB
 
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO); // 다크모드 해제
@@ -159,4 +151,39 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "한번 더 누르면 종료", Toast.LENGTH_SHORT).show();
         }
     }
+
+//    @Override
+//    public void onResume() {
+//        super.onResume();
+//
+//        acct3 = GoogleSignIn.getLastSignedInAccount(this);
+//        database = FirebaseDatabase.getInstance();
+//        myRef = database.getReference(acct.getUid());
+//
+//
+//        if (SleepTime.sleep_time != 0 || WorkTime.work_time != 0) {
+//
+//        } else if(myRef != null) {
+//            // ex
+//            myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                    for (DataSnapshot i : snapshot.getChildren()) {
+//                        if (i.getValue() != null) {
+//                            restTime = Integer.parseInt(i.getValue().toString());
+//                            Log.d("dbTest", restTime + "");
+//                        }
+//                    }
+//
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+//
+//            myRef.child("restTime").setValue(restTime);
+//        }
+//    }
 }

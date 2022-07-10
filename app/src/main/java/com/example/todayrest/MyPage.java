@@ -1,5 +1,8 @@
 package com.example.todayrest;
 
+import static com.example.todayrest.Login.acct2;
+import static com.example.todayrest.Splash.acct;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -73,18 +75,17 @@ public class MyPage extends Fragment {
         text_time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), StartTime.class);
+                Intent intent = new Intent(getActivity(), SleepTime.class);
                 startActivity(intent);
             }
         });
 //        if(Splash.acct != null){
-        if(Splash.acct == null){
-            text_nic.setText(Login.acct2.getDisplayName());
-            Glide.with(this).load(Login.acct2.getPhotoUrl()).circleCrop().into(login_im);
+        if(acct == null){
+            text_nic.setText(acct2.getDisplayName());
+            Glide.with(this).load(acct2.getPhotoUrl()).circleCrop().into(login_im);
         }else{
-            text_nic.setText(Splash.acct.getDisplayName());
-            Glide.with(this).load(Splash.acct.getPhotoUrl()).circleCrop().into(login_im);
-
+            text_nic.setText(acct.getDisplayName());
+            Glide.with(this).load(acct.getPhotoUrl()).circleCrop().into(login_im);
         }
 //        }
 

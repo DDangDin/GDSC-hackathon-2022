@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -75,7 +73,7 @@ public class Login extends AppCompatActivity {
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
         //updateUI(currentUser);
     }
     // [END on_start_check_user]
@@ -116,10 +114,11 @@ public class Login extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+//                            userUid = user.getUid();
                             //updateUI(user);
 //                            Toast.makeText(getApplicationContext(), "Complete", Toast.LENGTH_LONG).show();
                             // 성공 시 메인 페이지 이동
-                            Intent intent = new Intent(Login.this, StartTime.class);
+                            Intent intent = new Intent(Login.this, SleepTime.class);
                             startActivity(intent);
                             finish();
                         } else {
