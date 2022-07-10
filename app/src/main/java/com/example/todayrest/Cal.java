@@ -34,13 +34,12 @@ public class Cal extends Fragment {
     ViewGroup viewGroup;
     private int mYear = 0, mMonth = 0, mDay = 0;
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.activity_cal, container, false);
 
-        DatePickerDialog dialog = new DatePickerDialog(getActivity(), listener, 2013, 9, 22);
+        DatePickerDialog dialog = new DatePickerDialog(getActivity(), listener, 2022, 6, 10);
         dialog.show();
 
         dialog.setButton(
@@ -53,10 +52,6 @@ public class Cal extends Fragment {
                     }
                 }
         );
-
-
-
-
         return viewGroup;
     }
 
